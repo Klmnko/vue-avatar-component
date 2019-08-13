@@ -1,0 +1,123 @@
+.modal
+  z-index: 40
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  display: none
+  align-items: center
+  flex-direction: column
+  justify-content: center
+  overflow: hidden
+  &.is-active
+    display: flex
+
+  &__background
+    bottom: 0
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    background-color: rgba(10,10,10,.86)
+
+  &__content
+    margin: 0 20px
+    padding: 0 15px
+    max-height: calc(100vh - 160px)
+    overflow: auto
+    position: relative
+    width: 100%
+
+@media screen and (min-width: 769px), print
+  .modal__content
+    margin: 0 auto
+    max-height: calc(100vh - 40px)
+    width: 640px
+  
+
+
+.modal-box
+  width: 100%
+  border-radius: 4px
+  background: #fff
+  &__title
+    padding: 20px
+    font-size: 20px
+    text-align: center
+  &__body
+    overflow: hidden
+    padding: 0
+  &__btns
+    padding: 20px
+    display: flex
+    align-items: center
+    .button:not(:first-child)
+      margin-left: 10px
+    .button:not(:only-child):last-child
+      margin-left: auto
+
+@media screen and (max-width: 460px), print
+  .modal-box
+    &__btns
+      justify-content: space-between
+      flex-wrap: wrap
+      .button:not(:last-child)
+        padding: 5px
+        justify-content: center
+        min-width: calc(50% - 5px)
+        max-width: calc(50% - 5px)
+        svg:not(:only-child):first-child
+          margin-right: 6px
+      .button:not(:only-child):last-child
+        margin-top: 15px
+        justify-content: center
+        width: 100%
+
+
+
+
+.modal-close
+  background-color: rgba(10,10,10,.2)
+  border: none
+  border-radius: 50%
+  cursor: pointer
+  pointer-events: auto
+  display: inline-block
+  flex-grow: 0
+  flex-shrink: 0
+  font-size: 0
+  &:hover
+    background-color: rgba(10,10,10,.3)
+
+
+.modal-close
+  background: 0 0
+  position: fixed
+  right: 20px
+  top: 20px
+  height: 32px
+  max-height: 32px
+  max-width: 32px
+  min-height: 32px
+  min-width: 32px
+  width: 32px
+
+  &:before
+    height: 2px
+    width: 50%
+
+  &:after
+    height: 50%
+    width: 2px
+
+  &:after,
+  &:before
+    background-color: #fff
+    content: ""
+    display: block
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: translateX(-50%) translateY(-50%) rotate(45deg)
+    transform-origin: center center
