@@ -1,5 +1,8 @@
 # vue-avatar-component
 
+The component use cropper.js:
+https://fengyuanchen.github.io/cropperjs/
+
 Avatar changes when you click on:
 1. label in the header (inside of the block .imageUser)
 2. label at the bottom of a circle with a picture (block. Avatar-preview under the heading “Your avatar”)
